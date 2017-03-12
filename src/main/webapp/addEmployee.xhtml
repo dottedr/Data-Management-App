@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>All Employees</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <meta name="viewport" content="width=device-width"></meta>
+    </h:head>
+    <h:body>
+        <div class="top" id="logo">
+                <img src="http://sabinaadamska.co.uk/logo.jpg"/>
+            </div>
+
+        
+        <h3>Add Employee</h3>
+        <h:form>
+            <h:outputLabel value="Employee Id: "/>
+            <h:inputText binding="#{input_id}"/>
+            <br/><br/>
+            <h:outputLabel value="Employee Department Id: "/>
+            <h:inputText binding="#{input_dep_id}"/>
+            <br/><br/>
+            <h:outputLabel value="Employee Name: "/>
+            <h:inputText binding="#{input_name}"/>
+            <br/><br/>
+            <h:outputLabel value="Employee Job: "/>
+            <h:inputText binding="#{input_job}"/>
+            <br/><br/><br/>
+            
+            <h:commandButton value="Add Employee" action="#{addEmployeeBean.addEmployee(input_id.value, input_dep_id.value, input_name.value, input_job.value)}"/>
+        </h:form>
+    </h:body>
+</html>

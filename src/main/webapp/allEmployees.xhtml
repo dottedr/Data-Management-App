@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>All Employees</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <meta name="viewport" content="width=device-width"></meta>
+    </h:head>
+    <h:body>
+        <div class="top" id="logo">
+                <img src="http://sabinaadamska.co.uk/logo.jpg"/>
+            </div>
+
+        <h:dataTable value="#{allEmployeesBean.employeeList()}" var="employee" border="1">
+            <f:facet name="header">
+                <h:outputText value="All Employees Table"/>
+            </f:facet>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Id"/>
+                </f:facet>
+                <h:outputText value="#{employee.employeeID}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Department Id"/>
+                </f:facet>
+                <h:outputText value="#{employee.departmentID.departmentID}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Name"/>
+                </f:facet>
+                <h:outputText value="#{employee.name}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Job"/>
+                </f:facet>
+                <h:outputText value="#{employee.job}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Number of Skills"/>
+                </f:facet>
+                <h:outputText value="#{employee.employeeskillsCollection.size()}"/>
+            </h:column>
+            
+        </h:dataTable>
+    </h:body>
+</html>

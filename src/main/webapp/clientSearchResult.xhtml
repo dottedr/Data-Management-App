@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Find Client</title>
+         <link rel="stylesheet" type="text/css" href="style.css"/>
+        <meta name="viewport" content="width=device-width"></meta>
+    </h:head>
+    <h:body>
+        <div class="top" id="logo">
+                <img src="http://sabinaadamska.co.uk/logo.jpg"/>
+            </div>
+
+        <h2>Employee</h2>
+        
+        <h:panelGrid columns="2" border="1">
+            
+            <h:outputLabel value="Client Id"/>
+            <h:outputText value="#{findClientByNameBean.client.clientID}"/>
+                          
+            <h:outputLabel value="Employee Name"/>
+            <h:outputText value="#{findClientByNameBean.client.name}"/>
+            
+            <h:outputLabel value="Contact Person"/>
+            <h:outputText value="#{findClientByNameBean.client.contactPerson}"/>     
+                          
+            <h:outputLabel value="Address"/>
+            <h:outputText value="#{findClientByNameBean.client.address}"/>
+        </h:panelGrid>
+        
+        <h:dataTable value="#{findClientByNameBean.client.assignmentCollection}" var="assignment" border="1">
+            <f:facet name="header">
+                <h:outputLabel value="Assignment List"/>
+            </f:facet>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel value="Client ID"/>
+                </f:facet>
+                <h:outputText value="#{assignment.assignmentPK.clientID}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel value="Employee ID"/>
+                </f:facet>
+                <h:outputText value="#{assignment.assignmentPK.employeeID}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel value="Work Date"/>
+                </f:facet>
+                <h:outputText value="#{assignment.assignmentPK.workdate}"/>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputLabel value="Hours Supplied"/>
+                </f:facet>
+                <h:outputText value="#{assignment.hours}"/>
+            </h:column>
+            
+        </h:dataTable>
+    </h:body>
+</html>
