@@ -1,2 +1,2 @@
 # Data-Management-App
-Java EE
+Java EE project to manage employees data. 
